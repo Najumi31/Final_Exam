@@ -1,17 +1,3 @@
 .container {
-    padding: 5px;
+    padding: 8px;
    }
-   
-   .btn {
-    margin: 5px;
-   }
-html {
-  background-color: white;
-}
-html {
-  background-image: url("../Images/background.jpg");
-  background-size: cover;
- }
-#Link:hover {
-  color: white;
-}

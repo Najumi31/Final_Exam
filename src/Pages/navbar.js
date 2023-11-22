@@ -1,27 +1,27 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import '../CSS/navbar.css';
-import { ReactComponent as HouseIcon } from 'bootstrap-icons/icons/house.svg';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../CSS/navbar.css';
 
+const NavbarComponent = () => {
+ return (
+  <Navbar bg="secondary" expand="lg" class="p-3 mb-2 bg-gradient-secondary text-white" >
+    <Container >
+      <Navbar.Brand style={{color: 'white'}} >Group 9</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          <Link className="nav-link" to="/" style={{color: 'white'}}>Home</Link>
+          <Link className="nav-link" to="/product" style={{color: 'white'}}>Products</Link>
+          <Link className="nav-link" to="/stock" style={{color: 'white'}}>Stock</Link>
+          <Link className="nav-link" to="/transactions" style={{color: 'white'}}>Transactions</Link>
+          <Link className="nav-link" to="/reports" style={{color: 'white'}}>Reports</Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+ );
+};
 
-const Navbar = () => {
-  return (
-    <div>
-      <div class="p-3 mb-2 bg-secondary bg-gradient text-white opacity-100">
-          <div className="container d-flex justify-content-around align-items-start opacity-100" >
-            <ButtonGroup>
-              <Link className="text-white" id="link" to='/'><Button variant="secondary.bg-gradient" size="lg"><HouseIcon /> Home</Button></Link>
-              <Link className="text-white" to='/product'><Button variant="secondary.bg-gradient" size="lg">Products</Button></Link>
-              <Button variant="secondary.bg-gradient" size="lg">Stock</Button>
-              <Button variant="secondary.bg-gradient" size="lg">Transactions</Button>
-              <Button variant="secondary.bg-gradient" size="lg">Reports</Button>
-            </ButtonGroup>
-          </div>
-      </div>
-    </div>  
-  );
- }
-
-export default Navbar;
+export default NavbarComponent;
