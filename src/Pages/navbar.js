@@ -6,7 +6,7 @@ import '../CSS/navbar.css';
 
 const NavbarComponent = () => {
  return (
-  <Navbar bg="secondary" expand="lg" class="p-3 mb-2 bg-gradient-secondary text-white" >
+  <Navbar bg="secondary" expand="lg" class="p-3 mb-2 bg-gradient bg-secondary text-white" >
     <Container >
       <Navbar.Brand style={{color: 'white'}} >Group 9</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
