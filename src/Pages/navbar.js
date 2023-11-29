@@ -14,7 +14,7 @@ const NavbarComponent = () => {
         <Nav className="me-auto">
           <Link className="nav-link" to="/" style={{color: 'white'}}>Home</Link>
           <Link className="nav-link" to="/product" style={{color: 'white'}}>Products</Link>
-          <Link className="nav-link" to="/stock" style={{color: 'white'}}>Stock</Link>
+          <Link className="nav-link" to="/stock" style={{color: 'white'}}>Stocks</Link>
           <Link className="nav-link" to="/transactions" style={{color: 'white'}}>Transactions</Link>
           <Link className="nav-link" to="/reports" style={{color: 'white'}}>Reports</Link>
         </Nav>

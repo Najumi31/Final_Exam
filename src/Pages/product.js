@@ -139,7 +139,7 @@ const Product = ({ products, categories, addProduct, updateProduct, deleteProduc
                   <option key={category} value={category}>{category}</option>
                 ))}
               </select>
-
+              <br/>
               <button onClick={handleUpdateProduct} className="btn btn-success me-2">Update Product</button>
               <button onClick={() => setEditingProduct(null)} className="btn btn-secondary">Cancel</button>
             </div>

@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Product from './Pages/product';
 import Home from './Pages/home';
 import NavbarComponent from './Pages/navbar';
+import Stock from './Pages/stock';
+import Transactions from './Pages/transactions';
+import Reports from './Pages/reports';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -11,7 +14,7 @@ function App() {
     // Add more products as needed
   ];
 
-  const initialCategories = ['Consumables', 'Clothes', 'Homewares', ];
+  const initialCategories = ['Consumables', 'Clothes', 'Homewares'];
 
   const [products, setProducts] = React.useState(initialProducts);
 
@@ -27,6 +30,18 @@ function App() {
     setProducts((prevProducts) =>
       prevProducts.map((product) => (product.id === updatedProduct.id ? updatedProduct : product))
     );
+  };
+
+  const updateStock = (productId, newStock) => {
+    setProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.id === productId ? { ...product, stock: parseFloat(newStock) || 0 } : product
+      )
+    );
+  };
+
+  const completeTransaction = (transactions) => {
+    console.log('Complete transaction function not implemented');
   };
 
   return (
@@ -45,10 +60,17 @@ function App() {
                   addProduct={addProduct}
                   deleteProduct={deleteProduct}
                   updateProduct={updateProduct}
+                  updateStock={updateStock}
                 />
               </div>
             }
           />
+          <Route path="/stock" element={<Stock products={products} updateStock={updateStock} />} />
+          <Route
+            path="/transactions"
+            element={<Transactions products={products} updateStock={updateStock} completeTransaction={completeTransaction} />}
+          />
+          <Route path="/reports" element={<Reports transactions={[]} />} />
         </Routes>
       </Router>
     </div>
