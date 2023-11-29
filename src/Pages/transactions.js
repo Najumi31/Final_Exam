@@ -73,9 +73,10 @@ const Transactions = ({ products, updateStock, completeTransaction: completeTran
     return selectedProduct ? selectedProduct.stock : 0;
   };
 
+  // Filter out products with zero stock
   const filteredProducts = selectedCategory
-    ? products.filter((product) => product.category === selectedCategory)
-    : products;
+    ? products.filter((product) => product.category === selectedCategory && product.stock > 0)
+    : products.filter((product) => product.stock > 0);
 
   return (
     <div className="container mt-3">
@@ -168,6 +169,7 @@ const Transactions = ({ products, updateStock, completeTransaction: completeTran
 };
 
 export default Transactions;
+
 
 
 
